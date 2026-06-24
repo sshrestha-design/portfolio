@@ -58,9 +58,8 @@ document.addEventListener('keydown', (e) => {
     if (e.key === konamiCode[konamiIndex]) {
         konamiIndex++;
         if (konamiIndex === konamiCode.length) {
-            // Trigger Massive Screen Shake
-            document.body.classList.add('shake');
-            setTimeout(() => document.body.classList.remove('shake'), 800);
+            // Trigger Brutalist Pong Easter Egg
+            triggerPong();
             konamiIndex = 0;
         }
     } else {
@@ -91,4 +90,124 @@ if (navBtns.length > 0 && sections.length > 0) {
             }
         });
     });
+}
+
+function triggerPong() {
+    if (document.getElementById('pong-canvas')) return;
+    
+    const canvas = document.createElement('canvas');
+    canvas.id = 'pong-canvas';
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100vw';
+    canvas.style.height = '100vh';
+    canvas.style.zIndex = '9999';
+    canvas.style.backgroundColor = 'var(--bg-color)';
+    canvas.style.cursor = 'none';
+    document.body.appendChild(canvas);
+    
+    const closeMsg = document.createElement('div');
+    closeMsg.innerText = 'PRESS ESC TO EXIT';
+    closeMsg.style.position = 'fixed';
+    closeMsg.style.bottom = '40px';
+    closeMsg.style.width = '100%';
+    closeMsg.style.textAlign = 'center';
+    closeMsg.style.zIndex = '10000';
+    closeMsg.style.color = 'var(--text-color)';
+    closeMsg.style.fontFamily = 'var(--font-main)';
+    closeMsg.style.fontWeight = '900';
+    closeMsg.style.fontSize = '2rem';
+    closeMsg.style.pointerEvents = 'none';
+    document.body.appendChild(closeMsg);
+
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let gameLoop;
+    const paddleWidth = 20;
+    const paddleHeight = 150;
+    const ballSize = 25;
+    
+    let playerY = canvas.height / 2 - paddleHeight / 2;
+    let aiY = canvas.height / 2 - paddleHeight / 2;
+    let ballX = canvas.width / 2;
+    let ballY = canvas.height / 2;
+    let ballVX = 12;
+    let ballVY = 12;
+    
+    let upPressed = false;
+    let downPressed = false;
+    
+    const keydown = (e) => {
+        if (e.key === 'Escape') endGame();
+        if (e.key === 'ArrowUp' || e.key === 'w') upPressed = true;
+        if (e.key === 'ArrowDown' || e.key === 's') downPressed = true;
+    };
+    const keyup = (e) => {
+        if (e.key === 'ArrowUp' || e.key === 'w') upPressed = false;
+        if (e.key === 'ArrowDown' || e.key === 's') downPressed = false;
+    };
+    
+    window.addEventListener('keydown', keydown);
+    window.addEventListener('keyup', keyup);
+    
+    function endGame() {
+        cancelAnimationFrame(gameLoop);
+        canvas.remove();
+        closeMsg.remove();
+        window.removeEventListener('keydown', keydown);
+        window.removeEventListener('keyup', keyup);
+    }
+    
+    function update() {
+        if (upPressed && playerY > 0) playerY -= 15;
+        if (downPressed && playerY < canvas.height - paddleHeight) playerY += 15;
+        
+        // Brutalist AI
+        if (aiY + paddleHeight / 2 < ballY) aiY += 10;
+        else aiY -= 10;
+        
+        ballX += ballVX;
+        ballY += ballVY;
+        
+        if (ballY <= 0 || ballY + ballSize >= canvas.height) ballVY = -ballVY;
+        
+        // Player Collision
+        if (ballX <= 50 + paddleWidth && ballY + ballSize >= playerY && ballY <= playerY + paddleHeight) {
+            ballVX = -ballVX;
+            ballX = 50 + paddleWidth; 
+        }
+        // AI Collision
+        if (ballX + ballSize >= canvas.width - 50 - paddleWidth && ballY + ballSize >= aiY && ballY <= aiY + paddleHeight) {
+            ballVX = -ballVX;
+            ballX = canvas.width - 50 - paddleWidth - ballSize;
+        }
+        
+        if (ballX < 0 || ballX > canvas.width) {
+            ballX = canvas.width / 2;
+            ballY = canvas.height / 2;
+            ballVX = -ballVX;
+        }
+        
+        draw();
+        gameLoop = requestAnimationFrame(update);
+    }
+    
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const color = getComputedStyle(document.body).getPropertyValue('--text-color').trim() || '#000000';
+        ctx.fillStyle = color;
+        
+        ctx.fillRect(50, playerY, paddleWidth, paddleHeight);
+        ctx.fillRect(canvas.width - 50 - paddleWidth, aiY, paddleWidth, paddleHeight);
+        ctx.fillRect(ballX, ballY, ballSize, ballSize);
+        
+        for (let i = 0; i < canvas.height; i += 60) {
+            ctx.fillRect(canvas.width / 2 - 2, i, 4, 30);
+        }
+    }
+    
+    update();
 }
