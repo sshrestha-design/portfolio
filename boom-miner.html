@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boom Miner | Case Study</title>
+    <meta name="description" content="Speed is violence. A case study on Boom Miner, a high-speed platformer where every wall is collateral damage.">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Boom Miner | Case Study">
+    <meta property="og:description" content="Speed is violence. A case study on Boom Miner, a high-speed platformer where every wall is collateral damage.">
+    <meta property="og:image" content="https://sagarshrestha23.com.np/boom_miner_gameplay.png">
+    <meta property="og:url" content="https://sagarshrestha23.com.np/boom-miner.html">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Vercel Analytics -->
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+    <div class="floating-controls" style="position: fixed; top: 40px; right: 40px; display: flex; gap: 1rem; align-items: center; z-index: 1000; mix-blend-mode: difference; color: #ffffff;">
+        <button id="theme-toggle" style="position: static; margin: 0;">INVERT</button>
+    </div>
+
+    <div class="dashboard-container">
+        <!-- LEFT PANEL -->
+        <div class="dashboard-left">
+            <header>
+                <a href="index.html" style="font-weight: 900; border-bottom: 2px solid var(--border-color); text-decoration: none; padding-bottom: 2px;">&larr; BACK TO GAMES</a>
+                <h1 style="margin-top: 2rem;">BOOM MINER</h1>
+                <p class="subtitle">SPEED PLATFORMER PROTOTYPE</p>
+            </header>
+            
+            <div style="margin-top: auto; padding-top: 2rem; border-top: 2px solid var(--border-color);">
+                <a href="https://sagar-shrestha.itch.io/boom-miner" target="_blank" class="cv-btn play-btn-pulse" style="margin: 0; display: inline-block;">PLAY ON ITCH.IO</a>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="dashboard-right">
+            <section class="dashboard-section active" style="border: none; padding-top: 0;">
+                <img src="boom_miner_gameplay.png" style="width:100%; border:4px solid var(--border-color); box-shadow: 15px 15px 0 var(--border-color); margin-bottom: 4rem;">
+                
+                <h2 style="margin-top: 0;">THE DIRECTIVE</h2>
+                <p class="bio">Speed is violence. <i>Boom Miner</i> isn't a game about collecting coins; it's about tearing through a futuristic underground mine while being relentlessly hunted. I didn't want the player to feel powerful—I wanted them to feel desperate. Every structure, every wall, every platform in the mine is collateral damage. If it stands in your way, you blow it to hell. If you stop moving, you die.</p>
+
+                <h2 style="margin-top: 3rem;">THE PIVOT</h2>
+                <p class="bio">The original prompt was 'Destroy'. I started building a methodical, top-down puzzle game—and it was boring. I hated it. So I ripped the brakes out. A "happy accident" with an old physics script injected the prototype with a frenetic, Spelunky-esque inertia. I realized pacing is everything. I violently pivoted the entire design document into a high-speed platformer within 24 hours. I didn't fix the chaos; I weaponized it.</p>
+
+                <h2 style="margin-top: 3rem;">THE ENGINE OF CHAOS</h2>
+                <ul class="text-list">
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <strong>Non-Linear Destruction:</strong>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">There is no fixed path. Level design is just a suggestion. You carve your own brutal route by blowing the architecture to pieces as you go.</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <strong>Relentless Predators:</strong>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">I coded the AI to refuse logic. They don't patrol; they hunt. They will chase the player to the absolute edges of the level until dealt with.</span>
+                    </li>
+                </ul>
+
+                <h2 style="margin-top: 3rem;">THE AUTOPSY</h2>
+                <p class="bio"><strong>The Blood:</strong> The game succeeded in delivering a stark visual palette, heavy "game juice" (screen shake, particle gore), and a core loop that spikes the player's adrenaline.</p>
+                <p class="bio" style="margin-top: 1rem;"><strong>The Flaw:</strong> I gave the player too much explosive freedom without enough structural choke-points. Without strict spatial constraints, players could blast out of bounds, bleeding out the tension. It was a harsh, bleeding lesson in ruthless scoping—never give the player a bomb before you've built an unbreakable box to trap them in.</p>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

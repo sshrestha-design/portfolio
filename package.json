@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "playwright": "^1.61.1"
+  },
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "generate_pdf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

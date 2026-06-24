@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagar Shrestha | Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Print-specific overrides */
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+                background: #ffffff !important;
+                color: #000000 !important;
+                max-width: 100%;
+            }
+            
+            body.dark-mode {
+                background: #ffffff !important;
+                color: #000000 !important;
+            }
+
+            .dashboard-container {
+                display: block !important;
+                height: auto !important;
+                overflow: visible !important;
+            }
+            .dashboard-left, .dashboard-right {
+                padding: 0 !important;
+                border: none !important;
+                display: block !important;
+                overflow: visible !important;
+                height: auto !important;
+            }
+
+            #theme-toggle, .back-btn {
+                display: none !important;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 0;
+            }
+            
+            h2 {
+                margin: 0.8rem 0 0.2rem 0;
+                font-size: 11pt;
+                border-bottom: 1px solid #000;
+                padding-bottom: 0.1rem;
+            }
+
+            .subtitle {
+                font-size: 10pt;
+                margin-bottom: 0.2rem;
+                color: #555 !important;
+            }
+
+            .bio {
+                margin-bottom: 0.5rem !important;
+                font-size: 9pt;
+                line-height: 1.2;
+            }
+
+            .text-list li {
+                padding: 0.2rem 0;
+                border-bottom: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            .text-list li strong {
+                font-size: 9.5pt;
+            }
+
+            .text-list li span {
+                color: #444 !important;
+                font-size: 9pt;
+                line-height: 1.2;
+            }
+
+            a {
+                color: #000 !important;
+                text-decoration: none !important;
+            }
+            
+            @page {
+                margin: 0.8cm;
+            }
+        }
+        
+        /* Web specific for resume */
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-header {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--muted-color);
+            flex-wrap: wrap;
+        }
+    </style>
+
+    <!-- Vercel Analytics -->
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+    <div class="floating-controls" style="position: fixed; top: 40px; right: 40px; display: flex; gap: 1rem; align-items: center; z-index: 1000; mix-blend-mode: difference; color: #ffffff;">
+        <button id="theme-toggle" style="position: static; margin: 0;">INVERT</button>
+    </div>
+
+    <div class="dashboard-container">
+        <!-- LEFT PANEL -->
+        <div class="dashboard-left">
+            <header>
+                <a href="index.html" class="back-btn" style="border-bottom: 2px solid var(--border-color); text-decoration: none; padding-bottom: 2px;">&larr; BACK TO PORTFOLIO</a>
+                <h1 style="margin-top: 2rem; line-height: 1.1;">SAGAR SHRESTHA</h1>
+                <p class="subtitle" style="color: #ffffff;">GAME DESIGNER</p>
+                
+                <div class="contact-header" style="margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <span>Berlin, Germany</span>
+                    <span><a href="mailto:sagar.shrestha23@gmail.com">sagar.shrestha23@gmail.com</a></span>
+                    <span>+49 1520 2027 351</span>
+                </div>
+
+                <a href="Sagar_Shrestha_Resume.pdf" download style="display: inline-block; padding: 0.4rem 0.8rem; border: 2px solid var(--border-color); color: var(--text-color); font-weight: 900; text-decoration: none; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 1rem; width: fit-content; transition: background-color 0.2s, color 0.2s;" onmouseover="this.style.backgroundColor='var(--accent-color)'; this.style.color='#fff'; this.style.borderColor='var(--accent-color)'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='var(--text-color)'; this.style.borderColor='var(--border-color)'">
+                    &#8595; DOWNLOAD PDF
+                </a>
+            </header>
+            <footer style="margin-top: auto; padding-top: 2rem; border-top: 2px solid var(--border-color); font-size: 0.8rem; text-align: left;">
+                <p style="margin: 0;">&copy; 2024 Sagar Shrestha.</p>
+            </footer>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="dashboard-right">
+            <section class="dashboard-section active" style="border: none; padding-top: 0;">
+                <h2 style="margin-top: 0; line-height: 1.2;">PROFESSIONAL PROFILE</h2>
+                <p class="bio">Game Designer with a multidisciplinary background spanning architecture, civil engineering, and immersive interactive exhibits. Proven ability to translate complex spatial design and human psychology into engaging digital mechanics. Strong focus on rapid prototyping, technical documentation, and optimizing user flow.</p>
+                
+                <h2 style="line-height: 1.2;">WORK EXPERIENCE</h2>
+                <ul class="text-list">
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <div style="display: flex; justify-content: space-between; width: 100%;">
+                            <strong>Controller - IKONO</strong>
+                            <span style="color: var(--muted-color); font-weight: 700;">Sep 2024 - Present | Berlin</span>
+                        </div>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">Guided customers through the exhibition, ensuring a seamless and engaging interactive experience. Acted as the primary point of contact for visitor inquiries, providing excellent customer service and operational support.</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <div style="display: flex; justify-content: space-between; width: 100%;">
+                            <strong>Sales & Customer Service - Kamps GmbH</strong>
+                            <span style="color: var(--muted-color); font-weight: 700;">Mar 2020 - 2024 | Berlin</span>
+                        </div>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">Managed daily sales operations and handled transactions in a fast-paced retail environment. Provided high-quality customer service, ensuring client satisfaction and resolving customer inquiries effectively.</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <div style="display: flex; justify-content: space-between; width: 100%;">
+                            <strong>CAD Drafter - Building Design Authority Pvt. Ltd.</strong>
+                            <span style="color: var(--muted-color); font-weight: 700;">Mar 2019 - Aug 2019 | Nepal</span>
+                        </div>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">Drafted and modeled municipal pipeline networks using AutoCAD. Produced detailed technical drawings and hydraulic schematics. Coordinated with civil engineers to support sustainable urban planning projects.</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <div style="display: flex; justify-content: space-between; width: 100%;">
+                            <strong>Company Owner - Aakhi Jyaal Construction</strong>
+                            <span style="color: var(--muted-color); font-weight: 700;">Feb 2017 - May 2019 | Nepal</span>
+                        </div>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">Founded and managed a consulting firm specializing in architectural design and 3D visualization. Oversaw project management, client relations, and operational business strategy. Delivered tailored visualization solutions for engineering projects.</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <div style="display: flex; justify-content: space-between; width: 100%;">
+                            <strong>Site Project Manager & CAD Designer - Shixitang Ramagram Foundation</strong>
+                            <span style="color: var(--muted-color); font-weight: 700;">Nov 2013 - Jan 2019 | Nepal</span>
+                        </div>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">Managed site operations and provided strategic consulting for the design and construction of the Ramagrama School project. Coordinated with external contractors, ensured quality control on-site, and maintained strict project timelines.</span>
+                    </li>
+                </ul>
+
+                <h2 style="line-height: 1.2;">SKILLS & COMPETENCIES</h2>
+                <ul class="text-list">
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <strong>Design & Prototyping</strong>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">Game Mechanics Design, Rapid Prototyping, Architecture & Flow Modeling (Miro), Technical Documentation (GDD).</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <strong>Game Engines & 3D</strong>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">Unity (C# Scripting), Unreal Engine, Blender.</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <strong>2D Art & Visuals</strong>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">Aseprite, Adobe Photoshop, Pixel Art Animation.</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <strong>Engineering & Architecture</strong>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">AutoCAD, Civil 3D, Geographic Information Systems (GIS), 3D Visualization.</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <strong>AI & Emergent Design</strong>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">AI-assisted workflows, Prompt Engineering, Generative AI for rapid ideation, Emergent Systems Design.</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <strong>The Lingua Franca</strong>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">English (Full Professional), German (Limited Working / B1), Nepali (Native).</span>
+                    </li>
+                </ul>
+
+                <h2 style="line-height: 1.2;">EDUCATION</h2>
+                <ul class="text-list">
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <div style="display: flex; justify-content: space-between; width: 100%;">
+                            <strong>Bachelor of Arts in Game and Media Design</strong>
+                            <span style="color: var(--muted-color); font-weight: 700;">Berlin</span>
+                        </div>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">BTK University of Art and Design. Focus on mechanics design, prototyping, and interactive media.</span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

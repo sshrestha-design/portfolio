@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berlin Berlin!! | Case Study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Vercel Analytics -->
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+    <div class="floating-controls" style="position: fixed; top: 40px; right: 40px; display: flex; gap: 1rem; align-items: center; z-index: 1000; mix-blend-mode: difference; color: #ffffff;">
+        <button id="theme-toggle" style="position: static; margin: 0;">INVERT</button>
+    </div>
+
+    <div class="dashboard-container">
+        <!-- LEFT PANEL -->
+        <div class="dashboard-left">
+            <header>
+                <a href="index.html" style="font-weight: 900; border-bottom: 2px solid var(--border-color); text-decoration: none; padding-bottom: 2px;">&larr; BACK TO GAMES</a>
+                <h1 style="margin-top: 2rem;">BERLIN BERLIN!!</h1>
+                <p class="subtitle">GB PALETTE INTERACTIVE NARRATIVE</p>
+            </header>
+            
+            <div style="margin-top: auto; padding-top: 2rem; border-top: 2px solid var(--border-color);">
+                <a href="https://sagar-shrestha.itch.io/berlin-berlin" target="_blank" class="cv-btn play-btn-pulse" style="margin: 0; display: inline-block;">PLAY ON ITCH.IO</a>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="dashboard-right">
+            <section class="dashboard-section active" style="border: none; padding-top: 0;">
+
+            <img src="https://img.itch.zone/aW1nLzI2MDgzMzcyLnBuZw==/315x250%23c/kDC288.png" style="width:100%; border:4px solid var(--border-color); box-shadow: 15px 15px 0 var(--border-color); margin-bottom: 4rem;">
+            
+            <h2>THE DIRECTIVE</h2>
+            <p class="bio">An aggressive, stylized interactive narrative built around a strict 4-color Gameboy palette. A raw visual exploration of Berlin's underground energy, reduced to its bare minimum pixels.</p>
+
+            <h2 style="margin-top: 3rem;">THE PIVOT</h2>
+            <p class="bio">I wanted to build an atmospheric experience without relying on modern high-fidelity rendering. The constraint was the catalyst: forcefully restricting the entire visual identity to a stark, retro color limit to evoke a deeply specific mood.</p>
+
+            <h2 style="margin-top: 3rem;">THE ENGINE OF CHAOS</h2>
+            <ul class="text-list">
+                <li>
+                    <strong>Brutal Constraints:</strong>
+                    <span>A strict 4-color palette forces visual storytelling to rely purely on high-contrast shapes, silhouettes, and lighting.</span>
+                </li>
+                <li>
+                    <strong>Atmospheric Navigation:</strong>
+                    <span>Movement and discovery dictate the narrative pacing.</span>
+                </li>
+            </ul>
+
+            <h2 style="margin-top: 3rem;">THE AUTOPSY</h2>
+            <p class="bio"><strong>The Blood:</strong> The oppressive, limited color palette successfully achieved a distinct, heavy atmosphere that modern rendering couldn't replicate.</p>
+            <p class="bio" style="margin-top: 1rem;"><strong>The Flaw:</strong> Focusing so heavily on aesthetic constraints meant mechanical depth took a backseat. It stands as a visual mood piece, but demands stronger interactive hooks.</p>
+        
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
