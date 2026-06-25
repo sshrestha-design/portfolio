@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sagarshrestha23.com.np/sitemap.xml
