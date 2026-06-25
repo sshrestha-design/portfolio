@@ -34,6 +34,10 @@ for (const file of htmlFiles) {
     // Replace style.css with inlined minified CSS
     const styleRegex = /<link rel="stylesheet" href="style\.css">/g;
     content = content.replace(styleRegex, `<style>${minifiedCss}</style>`);
+
+    // Defer script.js
+    const scriptRegex = /<script src="script\.js"><\/script>/g;
+    content = content.replace(scriptRegex, `<script defer src="script.js"></script>`);
     
     fs.writeFileSync(filePath, content);
 }
