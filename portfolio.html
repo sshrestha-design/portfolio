@@ -78,18 +78,138 @@
         </div>
 
         <!-- RIGHT PANEL -->
-        <div class="dashboard-right" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 100vh;">
-            <h1 style="font-size: 10rem; margin: 0; line-height: 0.8; letter-spacing: -5px; color: var(--accent-color);">404</h1>
-            <h2 style="font-size: 3rem; margin: 1rem 0; text-transform: uppercase;">YOU ARE LOST.</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">The page you are looking for does not exist in this grid.</p>
-            <a href="portfolio.html" style="font-size: 1.5rem; font-weight: 900; text-decoration: none; border: 4px solid var(--text-color); padding: 15px 30px; text-transform: uppercase; transition: all 0.2s; color: var(--text-color);" onmouseover="this.style.backgroundColor='var(--text-color)'; this.style.color='var(--bg-color)';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='var(--text-color)';">RETURN TO BASE</a>
+        <div class="dashboard-right">
+            
+            <!-- SECTION: ARCHIVE -->
+            <section id="section-archive" class="dashboard-section active">
+                <h2 style="margin-top: 0;">THE ARCHIVE</h2>
+                <ul class="project-list">
+                    <li><a href="boom-miner.html" data-img="boom_miner_gameplay.png" data-desc="A fast-paced, highly volatile speed platformer where pacing is everything. Every wall is collateral damage.">BOOM MINER <span>[CASE STUDY] Mechanics Design</span></a></li>
+                    <li><a href="hell-minion.html" data-img="https://img.itch.zone/aW1nLzI2MDgzMzE3LnBuZw==/315x250%23c/Gwsu2d.png" data-desc="A punishing top-down survival game emphasizing crowd control, weapon switching, and spatial awareness.">Hell Minion <span>[CASE STUDY] Top Down Survival</span></a></li>
+                    <li><a href="berlin-berlin.html" data-img="https://img.itch.zone/aW1nLzI2MDgzMzcyLnBuZw==/315x250%23c/kDC288.png" data-desc="An interactive narrative using a strict 4-color Gameboy palette to evoke nostalgia and mood.">Berlin Berlin!! <span>[CASE STUDY] GB Palette Interactive</span></a></li>
+                    <li><a href="crowdsurfer.html" data-img="https://img.itch.zone/aW1nLzE3OTQxOTY4LnBuZw==/315x250%23c/5UriP0.png" data-desc="A kinetic one-button runner built around momentum, flow state, and split-second decision making.">CrowdSurfer <span>[CASE STUDY] 1-Button Runner</span></a></li>
+                    <li><a href="gravity-switcher.html" data-img="https://img.itch.zone/aW1nLzc3MTYyOTMuZ2lm/315x250%23c/l7uw2e.gif" data-desc="A perspective-shifting puzzle game testing the player's spatial logic and environmental reading.">Gravity Switcher <span>[CASE STUDY] Perspective Puzzle</span></a></li>
+                    <li><a href="guidance.html" data-img="https://img.itch.zone/aW1nLzE4MjA1ODkzLnBuZw==/315x250%23c/v8DU0q.png" data-desc="An experimental speech-driven maze utilizing voice commands as the primary mechanic.">Guidance <span>[CASE STUDY] Speech-Driven Maze</span></a></li>
+                    <li><a href="the-new-dress.html" data-img="https://img.itch.zone/aW1nLzM3OTY3MjQucG5n/315x250%23c/5xPCV3.png" data-desc="A text-heavy interactive fiction focusing on branching dialogue and emotional consequence.">The New Dress <span>[CASE STUDY] Interactive Fiction</span></a></li>
+                </ul>
+            </section>
+
+            <!-- SECTION: MANIFESTO -->
+            <section id="section-manifesto" class="dashboard-section">
+                <h2 style="margin-top: 0;">DESIGN MANIFESTO</h2>
+                <ul class="text-list">
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <strong>RULE 1: DESIGN IS PROBLEM SOLVING</strong>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">Game design isn't just art with code; it's constantly questioning the 'Why/Where/Who' behind every choice. A design document is a guideline to solve problems, not a rigid script.</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <strong>RULE 2: RUTHLESS SCOPING</strong>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">I believe in focusing on a single core mechanic to absolute perfection rather than building a bloated vertical slice. True scoping is realizing exactly what can be perfected within a strict timeframe.</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <strong>RULE 3: THEATRICAL GAMEPLAY</strong>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">A creator always leaves a fingerprint. My love for heavy metal and cinema directly influences my desire to build heavy, ambient, and highly theatrical interactive experiences.</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <strong>RULE 4: GAMES AS A VOICE</strong>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">Games are far more than pixels on a screen or 'guns and action'. They are therapeutic mediums, self-identities, visual masterpieces, and platforms to voice a cause.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- SECTION: PAST LIVES -->
+            <section id="section-past-lives" class="dashboard-section">
+                <h2 style="margin-top: 0;">PAST LIVES & INFLUENCES</h2>
+                <p class="bio" style="margin-bottom: 2rem;">My perspective as a game designer wasn't born from playing games alone. It was forged on construction sites in Nepal and inside immersive exhibits in Berlin. Every role I've taken has been a masterclass in human psychology, spatial flow, and managing user expectations in the real world.</p>
+                <ul class="text-list">
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <div style="display: flex; justify-content: space-between; width: 100%;">
+                            <strong>Controller - IKONO</strong>
+                            <span style="color: var(--muted-color); font-weight: 700;">Sep 2024 - Present</span>
+                        </div>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">Coordinated the execution and iteration of immersive, interactive exhibits focused on multi-sensory user engagement. Collaborated with multidisciplinary teams to optimize visitor flow and spatial storytelling.</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <div style="display: flex; justify-content: space-between; width: 100%;">
+                            <strong>CAD Drafter - Building Design Authority Pvt. Ltd.</strong>
+                            <span style="color: var(--muted-color); font-weight: 700;">Mar 2019 - Aug 2019</span>
+                        </div>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">Designed and modeled municipal pipeline networks using AutoCAD. Produced detailed technical drawings and hydraulic schematics, coordinating with civil engineers for sustainable urban planning.</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <div style="display: flex; justify-content: space-between; width: 100%;">
+                            <strong>Company Owner - Aakhi Jyaal Construction</strong>
+                            <span style="color: var(--muted-color); font-weight: 700;">Feb 2017 - May 2019</span>
+                        </div>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">Founded and led a multidisciplinary firm. Oversaw end-to-end project lifecycles from conceptual design and 3D visualizations to technical drafting. Delivered over 20+ successful architectural projects.</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <div style="display: flex; justify-content: space-between; width: 100%;">
+                            <strong>Site Project Manager & CAD Designer - Shixitang Ramagram Foundation</strong>
+                            <span style="color: var(--muted-color); font-weight: 700;">Nov 2013 - Jan 2019</span>
+                        </div>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">Created architectural blueprints and 3D renderings for a China–Taiwan-funded school infrastructure project in rural Nepal. Promoted to Site Manager, successfully overseeing on-site construction.</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <div style="display: flex; justify-content: space-between; width: 100%;">
+                            <strong>Administrative Assistant - Lumbini Bamboo Resort</strong>
+                            <span style="color: var(--muted-color); font-weight: 700;">Aug 2012 - Jun 2013</span>
+                        </div>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">Supported front-desk operations, booking logistics, and vendor communication for a hospitality business catering to eco-tourism.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- SECTION: ARSENAL -->
+            <section id="section-arsenal" class="dashboard-section">
+                <h2 style="margin-top: 0;">THE ARSENAL</h2>
+                <p class="bio" style="margin-bottom: 2rem;">My toolset spans physical and digital realities. I build for global audiences across multiple disciplines.</p>
+                <ul class="text-list">
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <strong>Design & Prototyping</strong>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">Game Mechanics Design, Rapid Prototyping, Architecture & Flow Modeling (Miro), Technical Documentation (GDD).</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <strong>Game Engines & 3D</strong>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">Unity (C# Scripting), Unreal Engine, Blender.</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <strong>2D Art & Visuals</strong>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">Aseprite, Adobe Photoshop, Pixel Art Animation.</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <strong>Engineering & Architecture</strong>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">AutoCAD, Civil 3D, Geographic Information Systems (GIS), 3D Visualization.</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <strong>AI & Emergent Design</strong>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">AI-assisted workflows, Prompt Engineering, Generative AI for rapid ideation, Emergent Systems Design.</span>
+                    </li>
+                    <li style="flex-direction: column; align-items: flex-start;">
+                        <strong>The Lingua Franca</strong>
+                        <span style="margin-top: 0.5rem; text-transform: none; color: var(--text-color);">English (Full Professional), German (Limited Working / B1), Nepali (Native).</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- SECTION: CONTACT -->
+            <section id="section-contact" class="dashboard-section">
+                <h2 style="margin-top: 0;">LET'S TALK.</h2>
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 4rem;">
+                    <a href="mailto:sagar.shrestha23@gmail.com" class="cv-btn" style="font-size: clamp(2rem, 5vw, 4rem); padding: 1.5rem 3rem; background-color: var(--accent-color); color: #ffffff; border-color: var(--accent-color); box-shadow: 10px 10px 0 var(--border-color); display: inline-block;">[ HIRE ME ]</a>
+                    <p style="margin-top: 2rem; font-weight: 700; font-size: 1.2rem;">sagar.shrestha23@gmail.com</p>
+                    <p style="color: var(--muted-color); font-weight: 700;">Based in Berlin, Germany</p>
+                    
+                    <div class="currently-analyzing" style="margin-top: 4rem; width: 100%;">
+                        <p><strong>CURRENTLY PLAYING:</strong> Hollow Knight</p>
+                        <p><strong>CURRENTLY ANALYZING:</strong> Coyote-time jump windows & hit-stop mechanics.</p>
+                    </div>
+                </div>
+            </section>
+
         </div>
     </main>
-    
+
     <script defer src="script.js"></script>
-    <script>
-      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
