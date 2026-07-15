@@ -1,48 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://sagarshrestha23.com.np/</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://sagarshrestha23.com.np/portfolio.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://sagarshrestha23.com.np/boom-miner.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sagarshrestha23.com.np/resume.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sagarshrestha23.com.np/guidance.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sagarshrestha23.com.np</loc>
-    <lastmod>2026-06-25</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://sagarshrestha23.com.np/hell-minion.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sagarshrestha23.com.np/crowdsurfer.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sagarshrestha23.com.np/gravity-switcher.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sagarshrestha23.com.np/the-new-dress.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sagarshrestha23.com.np/berlin-berlin.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>

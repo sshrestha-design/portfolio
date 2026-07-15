@@ -15,6 +15,10 @@ if (projectLinks.length > 0 && hoverImageWrapper) {
             if (imgSrc) {
                 hoverImage.src = imgSrc;
                 
+                // Add dynamic alt text for SEO and accessibility
+                const linkTitle = e.currentTarget.textContent.split('[')[0].trim();
+                hoverImage.alt = linkTitle ? `${linkTitle} Gameplay Preview` : "Project Preview";
+                
                 if (hoverDesc && desc) {
                     hoverDesc.textContent = desc;
                     hoverDesc.style.display = 'block';
