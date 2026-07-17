@@ -169,7 +169,7 @@ function triggerPong() {
         if (upPressed && playerY > 0) playerY -= 15;
         if (downPressed && playerY < canvas.height - paddleHeight) playerY += 15;
         
-        // Brutalist AI
+        // Opponent logic
         if (aiY + paddleHeight / 2 < ballY) aiY += 10;
         else aiY -= 10;
         
@@ -183,7 +183,7 @@ function triggerPong() {
             ballVX = -ballVX;
             ballX = 50 + paddleWidth; 
         }
-        // AI Collision
+        // Opponent Collision
         if (ballX + ballSize >= canvas.width - 50 - paddleWidth && ballY + ballSize >= aiY && ballY <= aiY + paddleHeight) {
             ballVX = -ballVX;
             ballX = canvas.width - 50 - paddleWidth - ballSize;
