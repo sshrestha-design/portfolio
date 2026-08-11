@@ -5,6 +5,15 @@
     --border-color: #000000;
     --font-main: 'Inter', sans-serif;
     --accent-color: #e60000;
+    
+    /* Motion Design Variables */
+    --ease-entrance: cubic-bezier(0.19, 1, 0.22, 1); /* ease-out-expo */
+    --ease-exit: cubic-bezier(0.95, 0.05, 0.79, 0.04); /* ease-in-expo */
+    --ease-standard: cubic-bezier(0.25, 1, 0.5, 1); /* fast ease-out */
+    
+    --duration-quick: 150ms;
+    --duration-standard: 300ms;
+    --duration-slow: 500ms;
 }
 
 body.dark-mode {
@@ -24,7 +33,7 @@ body {
     line-height: 1.5;
     position: relative;
     overflow: hidden; /* No scrolling on desktop */
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color var(--duration-standard) var(--ease-standard), color var(--duration-standard) var(--ease-standard);
     height: 100vh;
 }
 
@@ -77,12 +86,13 @@ body {
     text-align: left;
     padding: 0;
     cursor: pointer;
-    transition: color 0.2s;
+    transition: transform var(--duration-quick) var(--ease-entrance), color var(--duration-quick) ease;
     text-transform: uppercase;
 }
 
 .dashboard-nav button:hover, .dashboard-nav button.active {
     color: var(--text-color);
+    transform: translateX(10px);
 }
 
 .dashboard-nav button.active::before {
@@ -92,15 +102,40 @@ body {
 
 .dashboard-section {
     display: none;
-    animation: fadeIn 0.3s ease;
 }
 
 .dashboard-section.active {
     display: block;
+    animation: sectionEnter var(--duration-standard) var(--ease-entrance) forwards;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
+.dashboard-section.exiting {
+    display: block;
+    animation: sectionExit var(--duration-quick) var(--ease-exit) forwards;
+}
+
+@keyframes sectionEnter {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sectionExit {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-15px); }
+}
+
+/* Page Load Choreography */
+.dashboard-left, .split-left {
+    opacity: 0;
+    animation: pageLoadEnter var(--duration-slow) var(--ease-entrance) forwards;
+}
+.dashboard-right, .split-right {
+    opacity: 0;
+    animation: pageLoadEnter var(--duration-slow) var(--ease-entrance) 150ms forwards;
+}
+
+@keyframes pageLoadEnter {
+    from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -214,17 +249,42 @@ a {
     font-weight: 900;
     text-decoration: none;
     background: transparent;
+    transition: transform var(--duration-quick) var(--ease-entrance), background var(--duration-quick) ease, color var(--duration-quick) ease;
 }
 .cv-btn:hover {
     background: var(--accent-color);
     color: #ffffff;
     border-color: var(--accent-color);
+    transform: scale(1.05);
+}
+.cv-btn:active {
+    transform: scale(0.95);
+    transition-duration: 50ms;
 }
 
 /* Featured Projects List */
 .project-list {
     list-style: none;
     padding: 0;
+}
+
+/* Staggered project list items */
+.project-list li {
+    opacity: 0;
+    animation: itemCascade var(--duration-standard) var(--ease-entrance) forwards;
+}
+.project-list li:nth-child(1) { animation-delay: 200ms; }
+.project-list li:nth-child(2) { animation-delay: 250ms; }
+.project-list li:nth-child(3) { animation-delay: 300ms; }
+.project-list li:nth-child(4) { animation-delay: 350ms; }
+.project-list li:nth-child(5) { animation-delay: 400ms; }
+.project-list li:nth-child(6) { animation-delay: 450ms; }
+.project-list li:nth-child(7) { animation-delay: 500ms; }
+.project-list li:nth-child(n+8) { animation-delay: 550ms; }
+
+@keyframes itemCascade {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .project-list li a {
@@ -239,12 +299,13 @@ a {
     position: relative;
     text-decoration: none;
     color: var(--text-color);
-    transition: all 0.2s ease;
+    transition: transform var(--duration-standard) var(--ease-entrance), border-color var(--duration-quick) ease, padding-left var(--duration-quick) var(--ease-entrance);
 }
 
 .project-list li a:hover {
-    padding-left: 15px; 
+    padding-left: 20px; 
     border-bottom-color: var(--border-color);
+    transform: translateX(5px);
 }
 
 .project-list li a span {
@@ -257,13 +318,14 @@ a {
     text-align: right;
     margin-left: 1rem;
     text-transform: uppercase;
-    transition: all 0.2s ease;
+    transition: transform var(--duration-quick) var(--ease-entrance), background-color var(--duration-quick) ease, color var(--duration-quick) ease;
 }
 
 .project-list li a:hover span {
     background-color: var(--accent-color);
     color: #ffffff;
     border-color: var(--accent-color);
+    transform: scale(1.1);
 }
 
 /* Background image reveal effect - EXCITING */
@@ -274,7 +336,7 @@ a {
     z-index: 100; 
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: opacity var(--duration-quick) ease, transform 400ms var(--ease-entrance);
     will-change: transform, left, top, opacity;
 }
 
@@ -434,10 +496,16 @@ body.shake {
     background-color: var(--accent-color) !important;
     color: #ffffff !important;
     border-color: var(--accent-color) !important;
+    transition: transform var(--duration-quick) var(--ease-entrance), box-shadow var(--duration-quick) ease !important;
 }
 
 .play-btn-pulse:hover {
     transform: scale(1.1);
     box-shadow: 0 0 20px var(--accent-color);
+}
+
+.play-btn-pulse:active {
+    transform: scale(0.95);
+    transition-duration: 50ms !important;
 }
 

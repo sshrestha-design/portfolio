@@ -78,18 +78,29 @@ const sections = document.querySelectorAll('.dashboard-section');
 if (navBtns.length > 0 && sections.length > 0) {
     navBtns.forEach(btn => {
         btn.addEventListener('click', () => {
+            if (btn.classList.contains('active')) return;
+            
             // Remove active from all buttons
             navBtns.forEach(b => b.classList.remove('active'));
             // Add active to clicked button
             btn.classList.add('active');
 
-            // Hide all sections
-            sections.forEach(s => s.classList.remove('active'));
-
-            // Show target section
+            const currentActive = document.querySelector('.dashboard-section.active');
             const targetId = btn.getAttribute('data-target');
             const targetSection = document.getElementById(targetId);
-            if (targetSection) {
+
+            if (currentActive) {
+                currentActive.classList.add('exiting');
+                currentActive.classList.remove('active');
+                
+                // Wait for exit animation to complete (duration-quick = 150ms)
+                setTimeout(() => {
+                    currentActive.classList.remove('exiting');
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                }, 150);
+            } else if (targetSection) {
                 targetSection.classList.add('active');
             }
         });
