@@ -37,13 +37,22 @@ try {
                 }
                 
                 // Replace style.css with inlined minified CSS
-                // We'll look for variations of the stylesheet link since paths might be relative
                 const styleRegex = /<link\s+rel="stylesheet"\s+href="(?:\.\.\/)*css\/style\.css">/g;
-                content = content.replace(styleRegex, `<style>${minifiedCss}</style>`);
+                if (content.match(styleRegex)) {
+                    content = content.replace(styleRegex, `<style>${minifiedCss}</style>`);
+                } else {
+                    // It might already be inlined from a previous build. Replace existing <style> tag.
+                    const existingStyleRegex = /<style>:root.*?<\/style>/gs;
+                    if (content.match(existingStyleRegex)) {
+                        content = content.replace(existingStyleRegex, `<style>${minifiedCss}</style>`);
+                    }
+                }
                 
                 // Also support legacy style.css in case
                 const legacyStyleRegex = /<link\s+rel="stylesheet"\s+href="style\.css">/g;
-                content = content.replace(legacyStyleRegex, `<style>${minifiedCss}</style>`);
+                if (content.match(legacyStyleRegex)) {
+                    content = content.replace(legacyStyleRegex, `<style>${minifiedCss}</style>`);
+                }
 
                 // Defer script.js - look for the non-deferred version and defer it
                 const scriptRegex = /<script\s+src="((?:\.\.\/)*js\/script\.js)"><\/script>/g;
