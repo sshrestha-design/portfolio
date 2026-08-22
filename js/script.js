@@ -1,51 +1,4 @@
-const projectLinks = document.querySelectorAll('.project-list a');
-const hoverImageWrapper = document.getElementById('hover-image-wrapper');
-const hoverImage = document.getElementById('hover-image');
 const themeToggle = document.getElementById('theme-toggle');
-
-// Project hover image reveal
-if (projectLinks.length > 0 && hoverImageWrapper) {
-    const hoverDesc = document.getElementById('hover-desc');
-
-    projectLinks.forEach(link => {
-        link.addEventListener('mouseenter', (e) => {
-            const imgSrc = e.currentTarget.getAttribute('data-img');
-            const desc = e.currentTarget.getAttribute('data-desc');
-            
-            if (imgSrc) {
-                hoverImage.src = imgSrc;
-                
-                // Add dynamic alt text for SEO and accessibility
-                const linkTitle = e.currentTarget.textContent.split('[')[0].trim();
-                hoverImage.alt = linkTitle ? `${linkTitle} Gameplay Preview` : "Project Preview";
-                
-                if (hoverDesc && desc) {
-                    hoverDesc.textContent = desc;
-                    hoverDesc.style.display = 'block';
-                } else if (hoverDesc) {
-                    hoverDesc.style.display = 'none';
-                }
-
-                hoverImageWrapper.classList.add('active');
-                
-                // Randomize rotation between -6deg and 6deg
-                currentRotation = Math.random() * 12 - 6;
-                hoverImageWrapper.style.transform = `scale(1) rotate(${currentRotation}deg)`;
-                
-                // Position fixed on the bottom left of the screen to avoid overlapping the archive list
-                hoverImageWrapper.style.right = 'auto';
-                hoverImageWrapper.style.top = 'auto';
-                hoverImageWrapper.style.left = '2rem';
-                hoverImageWrapper.style.bottom = '4rem';
-            }
-        });
-
-        link.addEventListener('mouseleave', () => {
-            hoverImageWrapper.classList.remove('active');
-            hoverImageWrapper.style.transform = `scale(0.8) rotate(${currentRotation - 10}deg)`;
-        });
-    });
-}
 
 // Theme Toggle
 if (themeToggle) {
@@ -71,41 +24,47 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Tab Navigation Logic
-const navBtns = document.querySelectorAll('.nav-btn');
-const sections = document.querySelectorAll('.dashboard-section');
+// Smooth Scrolling and Active Nav Link Highlighting
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('.content-section');
 
-if (navBtns.length > 0 && sections.length > 0) {
-    navBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            if (btn.classList.contains('active')) return;
-            
-            // Remove active from all buttons
-            navBtns.forEach(b => b.classList.remove('active'));
-            // Add active to clicked button
-            btn.classList.add('active');
+// Highlight active section on scroll
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.3
+};
 
-            const currentActive = document.querySelector('.dashboard-section.active');
-            const targetId = btn.getAttribute('data-target');
-            const targetSection = document.getElementById(targetId);
-
-            if (currentActive) {
-                currentActive.classList.add('exiting');
-                currentActive.classList.remove('active');
-                
-                // Wait for exit animation to complete (duration-quick = 150ms)
-                setTimeout(() => {
-                    currentActive.classList.remove('exiting');
-                    if (targetSection) {
-                        targetSection.classList.add('active');
-                    }
-                }, 150);
-            } else if (targetSection) {
-                targetSection.classList.add('active');
-            }
-        });
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${entry.target.id}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
     });
-}
+}, observerOptions);
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+
+// Smooth scroll to section when clicking a nav link
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+            targetSection.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
 
 function triggerPong() {
     if (document.getElementById('pong-canvas')) return;
