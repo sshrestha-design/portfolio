@@ -185,3 +185,14 @@ function triggerPong() {
     
     update();
 }
+
+// Interactive Bento Box Mouse Glow Effect
+document.querySelectorAll('.bento-tile').forEach(tile => {
+    tile.addEventListener('mousemove', e => {
+        const rect = tile.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        tile.style.setProperty('--mouse-x', `${x}px`);
+        tile.style.setProperty('--mouse-y', `${y}px`);
+    });
+});

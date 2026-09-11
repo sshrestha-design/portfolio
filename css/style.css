@@ -733,3 +733,77 @@ body.dark-mode .app-row:hover {
         grid-row: span 1;
     }
 }
+
+/* =========================================
+   INTERACTIVE BENTO GLOW & ANIMATIONS
+   ========================================= */
+
+.bento-tile {
+    position: relative; /* Required for pseudo-element glow */
+    animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+/* Ensure content sits above the glow */
+.bento-tile > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Mouse Glow Effect */
+.bento-tile::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        800px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+        rgba(255, 255, 255, 0.08),
+        transparent 40%
+    );
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+.bento-tile:hover::before {
+    opacity: 1;
+}
+
+/* Staggered Entry Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bento-tile:nth-child(1) { animation-delay: 0.0s; }
+.bento-tile:nth-child(2) { animation-delay: 0.1s; }
+.bento-tile:nth-child(3) { animation-delay: 0.2s; }
+.bento-tile:nth-child(4) { animation-delay: 0.3s; }
+.bento-tile:nth-child(5) { animation-delay: 0.4s; }
+.bento-tile:nth-child(6) { animation-delay: 0.5s; }
+.bento-tile:nth-child(7) { animation-delay: 0.6s; }
+
+/* Icon Styling */
+.lucide {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+    margin-right: 8px;
+    vertical-align: middle;
+    color: var(--primary-color);
+}
+.info-header-row .lucide {
+    margin-right: 6px;
+    color: var(--text-color);
+}
