@@ -418,7 +418,7 @@ footer {
     border-radius: var(--radius-xl);
     overflow: hidden;
     text-decoration: none;
-    min-height: 400px;
+    min-height: 280px;
     padding: 2.5rem;
     box-shadow: var(--shadow-md);
     transition: transform var(--anim-norm), box-shadow var(--anim-norm);
@@ -690,6 +690,7 @@ body.dark-mode .app-row:hover {
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: dense;
     grid-auto-rows: minmax(min-content, max-content);
     gap: 1.5rem;
     margin-bottom: 5rem;
@@ -735,7 +736,7 @@ body.dark-mode .app-row:hover {
 
 .bento-tile.featured-app-card {
     padding: 2.5rem;
-    min-height: 400px;
+    min-height: 280px;
     margin-bottom: 0;
     justify-content: flex-end;
 }
